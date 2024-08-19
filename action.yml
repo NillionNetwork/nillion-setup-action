@@ -1,0 +1,29 @@
+name: "Setup Nillion tools"
+description: "Setup Nillion cli tools with nilogy and add $HOME/.nilup/bin/ to PATH."
+author: "Nillion"
+
+branding:
+  icon: "box"
+  color: blue
+
+inputs:
+  version:
+    description: "The version to install."
+    required: false
+    default: "latest"
+
+outputs:
+  nada-version:
+    description: "The installed nada version."
+  nillion-devent-version:
+    description: "The installed nillion-devent version."
+  nillion-version:
+    description: "The installed nillion version."
+  nilup-version:
+    description: "The installed nilup version."
+  pynadac-version:
+    description: "The installed pynadac version."
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
