@@ -15,6 +15,9 @@ export async function run(): Promise<void> {
 
     await execa({ stdout: ["pipe", "inherit"] })`bash ${scriptPath}`;
     await execa({ stdout: ["pipe", "inherit"] })`${nilCmdPath} init`;
+    await execa({
+      stdout: ["pipe", "inherit"],
+    })`${nilCmdPath} install ${version}`;
     await execa({ stdout: ["pipe", "inherit"] })`${nilCmdPath} use ${version}`;
 
     // Execute binaries directly otherwise commands hang in ci
